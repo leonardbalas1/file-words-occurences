@@ -2,7 +2,7 @@ import scala.io.Source
 
 object wordCounter extends App {
   val fileName = "C:\\Users\\l.balas\\Documents\\frenchpoem.txt"
-  args(0) match {
+  args(0).toLowerCase match {
     case "--words" =>
       val wordList = Source.fromFile(fileName).getLines.flatMap(_.split("\\W+"))
       val wordCount = wordList.foldLeft(Map.empty[String, Int]) {
